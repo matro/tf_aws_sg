@@ -31,6 +31,10 @@ module "sg_web" {
   security_group_name = "${var.security_group_name}-web"
   vpc_id = "${var.vpc_id}"
   source_cidr_block = "${var.source_cidr_block}"
+  tags {
+    "Terraform" = "true"
+    "Environment" = "${var.environment}"
+  }
 }
 ```
 

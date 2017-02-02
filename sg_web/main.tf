@@ -67,4 +67,6 @@ resource "aws_security_group" "main_security_group" {
         protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }  
+
+	tags = "${merge(var.tags, map("Name", format("%s-igw", var.security_group_name)))}"
 }
